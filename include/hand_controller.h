@@ -16,7 +16,7 @@
 class HandController
 {
     public:
-        HandController(int id);
+        HandController();
         virtual ~HandController();
 
         int open(const std::string &serial_port);
@@ -25,15 +25,22 @@ class HandController
         std::string info_string;
         std::string info_string2;
         std::vector<int16_t> control_references;
+        std::vector<int16_t> control_references1;
         std::vector<int16_t> currents;
+        std::vector<int16_t> currents1;
         std::vector<int16_t> positions;
+        std::vector<int16_t> positions1;
         std::vector<int16_t> velocities;
+        std::vector<int16_t> velocities1;
         std::vector<int16_t> accelerations;
+        std::vector<int16_t> accelerations1;
 
         bool _first;
 
         void controller();
-        void target(short int pos, int time);
+        void getInfo();
+        // void target(short int pos, int time);
+        void target(short int id1_pos, short int id2_pos, int time);
         void MotionPlan();
         bool _condition;
         int iter;
@@ -42,7 +49,7 @@ class HandController
     private:
         void initialize();
         int _time;
-        short int _pos; 
+        short int _id1_pos, _id2_pos; 
         int time;
         int _id;
         

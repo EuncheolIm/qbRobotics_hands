@@ -1,5 +1,5 @@
 CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.o: \
- /home/kist/euncheol/api-test-shr-v7/src/hand_controller.cpp \
+ /home/kist/euncheol/qbRobotics_hands/src/hand_controller.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/9/stdlib.h \
  /usr/include/c++/9/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -180,7 +180,7 @@ CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.o: \
  /usr/include/c++/9/bits/stl_tree.h /usr/include/c++/9/bits/stl_set.h \
  /usr/include/c++/9/bits/stl_multiset.h \
  /usr/include/c++/9/bits/erase_if.h \
- /home/kist/euncheol/api-test-shr-v7/include/serial/serial.h \
+ /home/kist/euncheol/qbRobotics_hands/include/serial/serial.h \
  /usr/include/c++/9/map /usr/include/c++/9/bits/stl_map.h \
  /usr/include/c++/9/bits/stl_multimap.h /usr/include/c++/9/mutex \
  /usr/include/c++/9/bits/std_mutex.h \
@@ -208,7 +208,7 @@ CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.o: \
  /usr/include/c++/9/bits/regex.h /usr/include/c++/9/bits/regex.tcc \
  /usr/include/c++/9/bits/regex_executor.h \
  /usr/include/c++/9/bits/regex_executor.tcc /usr/include/c++/9/thread \
- /home/kist/euncheol/api-test-shr-v7/include/qbrobotics_research_api/qbsofthand_research_api.h \
- /home/kist/euncheol/api-test-shr-v7/include/qbrobotics_research_api/qbrobotics_research_api.h \
- /home/kist/euncheol/api-test-shr-v7/include/qbrobotics_research_api/qbrobotics_research_commands.h \
- /home/kist/euncheol/api-test-shr-v7/include/hand_controller.h
+ /home/kist/euncheol/qbRobotics_hands/include/qbrobotics_research_api/qbsofthand_research_api.h \
+ /home/kist/euncheol/qbRobotics_hands/include/qbrobotics_research_api/qbrobotics_research_api.h \
+ /home/kist/euncheol/qbRobotics_hands/include/qbrobotics_research_api/qbrobotics_research_commands.h \
+ /home/kist/euncheol/qbRobotics_hands/include/hand_controller.h
