@@ -5,6 +5,7 @@ This project is an example of to set up a CMake project using the compiled libra
 │   ├── qbrobotics_research_api
 │   └── serial
 ├── libs
+│   ├── qbdevice-api-7.x.x
 └── src
 └── CMakeLists.txt
 ```
@@ -28,8 +29,15 @@ This project is an example of to set up a CMake project using the compiled libra
 
 The project can be compiled by running the following commands:
 ```
-mkdir build
-cd build
+cd/libs/qbdevice-api-7.x.x
+mkdir build && cd build
+cmake ..
+make
+```
+and
+```
+cd ../..
+mkdir build && cd build
 cmake ..
 make
 ```
