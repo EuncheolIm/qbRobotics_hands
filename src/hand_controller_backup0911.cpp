@@ -74,7 +74,11 @@ int HandController::scanForDevices(const int &max_repeats) {
           std::cout << "Not valid device retrieved!" << std::endl;
           continue;  // ID 120 is reserved, ID 0 is for sure an error
         }
-        soft_hands_.insert(std::make_pair(static_cast<int>(device_id.id), std::make_shared<qbrobotics_research_api::qbSoftHandLegacyResearch>(communication_handler_, "dev", serial_port.serial_port, device_id.id)));
+        if (_first )
+        {
+          soft_hands_.insert(std::make_pair(static_cast<int>(device_id.id), std::make_shared<qbrobotics_research_api::qbSoftHandLegacyResearch>(communication_handler_, "dev", serial_port.serial_port, 1)));
+          _first = false;
+        }
         qbrobotics_devices_found++;
       }
       if (qbrobotics_devices_found == 0) {
@@ -100,7 +104,7 @@ void HandController::controller()
     }
     std::cout << "id : "<<id.id <<std::endl;
     // if (_first){
-      _first = false;
+      // _first = false;
       // soft_hands_.at((int)id.id)->getInfo(INFO_ALL, info_string); // 연결된 device의 정보 read
       soft_hands_.at(_id)->getInfo(INFO_ALL, info_string); // 연결된 device의 정보 read
       std::cout << info_string << std::endl << "----" << std::endl;
@@ -219,15 +223,15 @@ void HandController::MotionPlan()
 }
 int main() {
   HandController hand_R(1);
-  HandController hand_L(2);
+  // HandController hand_L(2);
   while(1)
   { 
     hand_R.MotionPlan();
-    hand_L.MotionPlan();
+    // hand_L.MotionPlan();
     while(!hand_R._condition)
     {
       hand_R.controller();
-      hand_L.controller();
+      // hand_L.controller();
     }
   }
   //  Close serial port

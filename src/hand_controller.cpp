@@ -52,6 +52,8 @@ int HandController::open(const std::string &serial_port) {
 // Scan ports for qbrobotics devices
 int HandController::scanForDevices(const int &max_repeats) {
     communication_handler_ = std::make_shared<qbrobotics_research_api::CommunicationLegacy>(); // make shared pointer that handles the communication
+    // std::cout<<communication_handler_->listSerialPorts(serial_ports_)<<std::endl;
+    communication_handler_->listSerialPorts(serial_ports_);
   if (communication_handler_->listSerialPorts(serial_ports_) < 0) {
       std::cerr << "[scanForDevices] no serial ports found" << std::endl; 
       return -1;

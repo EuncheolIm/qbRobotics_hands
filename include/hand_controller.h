@@ -16,11 +16,13 @@
 class HandController
 {
     public:
+        // HandController(int id);
         HandController();
         virtual ~HandController();
 
         int open(const std::string &serial_port);
         int scanForDevices(const int &max_repeats);
+        int scanForDevices(const int &max_repeats, int id);
 
         std::string info_string;
         std::string info_string2;
@@ -41,6 +43,7 @@ class HandController
         void getInfo();
         // void target(short int pos, int time);
         void target(short int id1_pos, short int id2_pos, int time);
+        void target(short int id1_pos, int time);
         void MotionPlan();
         bool _condition;
         int iter;
@@ -50,6 +53,7 @@ class HandController
         void initialize();
         int _time;
         short int _id1_pos, _id2_pos; 
+        short int _pos;
         int time;
         int _id;
         

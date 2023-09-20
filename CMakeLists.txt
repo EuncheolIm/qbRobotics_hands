@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
-project(qbSHR_API_example VERSION 1.0.0 LANGUAGES CXX)
+project(qb VERSION 1.0.0 LANGUAGES CXX)
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/libs/qbdevice-api-7.x.x/serial)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/libs/qbdevice-api-7.x.x/qbrobotics-driver)
 
 include_directories(include)
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs)
@@ -8,14 +11,13 @@ message(${PROJECT_NAME})
 add_executable(${PROJECT_NAME}
   # src/main.cpp
   src/hand_controller.cpp
-)
+  # src/hand_controller_backup0911.cpp
+  )
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
-  # ${CMAKE_CURRENT_SOURCE_DIR}/libs/libqbrobotics_driver.a # FIXME: why specify type?
-  # ${CMAKE_CURRENT_SOURCE_DIR}/libs/libSerial.a
-  ${CMAKE_CURRENT_SOURCE_DIR}/qbdevice-api-7.x.x/build/qbrobotics-driver/libqbrobotics_driver.a # FIXME: why specify type?
-  ${CMAKE_CURRENT_SOURCE_DIR}/qbdevice-api-7.x.x/build/serial/libSerial.a
+  ${CMAKE_CURRENT_SOURCE_DIR}/libs//qbdevice-api-7.x.x/build/qbrobotics-driver/libqbrobotics_driver.a # FIXME: why specify type?
+  ${CMAKE_CURRENT_SOURCE_DIR}/libs//qbdevice-api-7.x.x/build/serial/libSerial.a
 )
 
 # C++ Settings

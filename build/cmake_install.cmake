@@ -1,4 +1,4 @@
-# Install script for directory: /home/kist/euncheol/qbRobotics_hands
+# Install script for directory: /home/kist/test/qbRobotics_hands
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,31 +43,38 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example")
+  if(EXISTS "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example"
+         FILE "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example")
+   "/home/kist/test/qbRobotics_hands/qb")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/kist/euncheol/qbRobotics_hands" TYPE EXECUTABLE FILES "/home/kist/euncheol/qbRobotics_hands/build/qbSHR_API_example")
-  if(EXISTS "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example")
+  file(INSTALL DESTINATION "/home/kist/test/qbRobotics_hands" TYPE EXECUTABLE FILES "/home/kist/test/qbRobotics_hands/build/qb")
+  if(EXISTS "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example"
-         OLD_RPATH "/home/kist/euncheol/qbRobotics_hands/libs:"
+         FILE "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb"
+         OLD_RPATH "/home/kist/test/qbRobotics_hands/libs:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/kist/euncheol/qbRobotics_hands/qbSHR_API_example")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/kist/test/qbRobotics_hands/qb")
     endif()
   endif()
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/kist/test/qbRobotics_hands/build/libs/qbdevice-api-7.x.x/serial/cmake_install.cmake")
+  include("/home/kist/test/qbRobotics_hands/build/libs/qbdevice-api-7.x.x/qbrobotics-driver/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -78,5 +85,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kist/euncheol/qbRobotics_hands/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kist/test/qbRobotics_hands/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -54,51 +54,138 @@ RM = /home/kist/anaconda3/lib/python3.9/site-packages/cmake/data/bin/cmake -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kist/euncheol/qbRobotics_hands
+CMAKE_SOURCE_DIR = /home/kist/test/qbRobotics_hands
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kist/euncheol/qbRobotics_hands/build
+CMAKE_BINARY_DIR = /home/kist/test/qbRobotics_hands/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/qbSHR_API_example.dir/all
+all: CMakeFiles/qb.dir/all
+all: libs/qbdevice-api-7.x.x/serial/all
+all: libs/qbdevice-api-7.x.x/qbrobotics-driver/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: libs/qbdevice-api-7.x.x/serial/preinstall
+preinstall: libs/qbdevice-api-7.x.x/qbrobotics-driver/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/qbSHR_API_example.dir/clean
+clean: CMakeFiles/qb.dir/clean
+clean: libs/qbdevice-api-7.x.x/serial/clean
+clean: libs/qbdevice-api-7.x.x/qbrobotics-driver/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/qbSHR_API_example.dir
+# Directory level rules for directory libs/qbdevice-api-7.x.x/qbrobotics-driver
+
+# Recursive "all" directory target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/all: libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/all
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/all
+
+# Recursive "preinstall" directory target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/preinstall:
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/preinstall
+
+# Recursive "clean" directory target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/clean: libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/clean
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/clean
+
+#=============================================================================
+# Directory level rules for directory libs/qbdevice-api-7.x.x/serial
+
+# Recursive "all" directory target.
+libs/qbdevice-api-7.x.x/serial/all: libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/all
+.PHONY : libs/qbdevice-api-7.x.x/serial/all
+
+# Recursive "preinstall" directory target.
+libs/qbdevice-api-7.x.x/serial/preinstall:
+.PHONY : libs/qbdevice-api-7.x.x/serial/preinstall
+
+# Recursive "clean" directory target.
+libs/qbdevice-api-7.x.x/serial/clean: libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/clean
+.PHONY : libs/qbdevice-api-7.x.x/serial/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/qb.dir
 
 # All Build rule for target.
-CMakeFiles/qbSHR_API_example.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kist/euncheol/qbRobotics_hands/build/CMakeFiles --progress-num=1,2 "Built target qbSHR_API_example"
-.PHONY : CMakeFiles/qbSHR_API_example.dir/all
+CMakeFiles/qb.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kist/test/qbRobotics_hands/build/CMakeFiles --progress-num=5,6 "Built target qb"
+.PHONY : CMakeFiles/qb.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/qbSHR_API_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/euncheol/qbRobotics_hands/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/qbSHR_API_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/euncheol/qbRobotics_hands/build/CMakeFiles 0
-.PHONY : CMakeFiles/qbSHR_API_example.dir/rule
+CMakeFiles/qb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/qb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 0
+.PHONY : CMakeFiles/qb.dir/rule
 
 # Convenience name for target.
-qbSHR_API_example: CMakeFiles/qbSHR_API_example.dir/rule
-.PHONY : qbSHR_API_example
+qb: CMakeFiles/qb.dir/rule
+.PHONY : qb
 
 # clean rule for target.
-CMakeFiles/qbSHR_API_example.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/clean
-.PHONY : CMakeFiles/qbSHR_API_example.dir/clean
+CMakeFiles/qb.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/clean
+.PHONY : CMakeFiles/qb.dir/clean
+
+#=============================================================================
+# Target rules for target libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir
+
+# All Build rule for target.
+libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/all:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build.make libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/depend
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build.make libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kist/test/qbRobotics_hands/build/CMakeFiles --progress-num=1,2,3,4 "Built target Serial"
+.PHONY : libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/all
+
+# Build rule for subdir invocation for target.
+libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 0
+.PHONY : libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/rule
+
+# Convenience name for target.
+Serial: libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/rule
+.PHONY : Serial
+
+# clean rule for target.
+libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/clean:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build.make libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/clean
+.PHONY : libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/clean
+
+#=============================================================================
+# Target rules for target libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir
+
+# All Build rule for target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/all:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build.make libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/depend
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build.make libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kist/test/qbRobotics_hands/build/CMakeFiles --progress-num=7,8,9,10,11,12,13 "Built target qbrobotics_driver"
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/all
+
+# Build rule for subdir invocation for target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 0
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/rule
+
+# Convenience name for target.
+qbrobotics_driver: libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/rule
+.PHONY : qbrobotics_driver
+
+# clean rule for target.
+libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build.make libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/clean
+.PHONY : libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

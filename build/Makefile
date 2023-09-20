@@ -57,10 +57,10 @@ RM = /home/kist/anaconda3/lib/python3.9/site-packages/cmake/data/bin/cmake -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kist/euncheol/qbRobotics_hands
+CMAKE_SOURCE_DIR = /home/kist/test/qbRobotics_hands
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kist/euncheol/qbRobotics_hands/build
+CMAKE_BINARY_DIR = /home/kist/test/qbRobotics_hands/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/euncheol/qbRobotics_hands/build/CMakeFiles /home/kist/euncheol/qbRobotics_hands/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles /home/kist/test/qbRobotics_hands/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/euncheol/qbRobotics_hands/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kist/test/qbRobotics_hands/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,24 +162,50 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named qbSHR_API_example
+# Target rules for targets named qb
 
 # Build rule for target.
-qbSHR_API_example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qbSHR_API_example
-.PHONY : qbSHR_API_example
+qb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qb
+.PHONY : qb
 
 # fast build rule for target.
-qbSHR_API_example/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/build
-.PHONY : qbSHR_API_example/fast
+qb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/build
+.PHONY : qb/fast
+
+#=============================================================================
+# Target rules for targets named Serial
+
+# Build rule for target.
+Serial: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Serial
+.PHONY : Serial
+
+# fast build rule for target.
+Serial/fast:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build.make libs/qbdevice-api-7.x.x/serial/CMakeFiles/Serial.dir/build
+.PHONY : Serial/fast
+
+#=============================================================================
+# Target rules for targets named qbrobotics_driver
+
+# Build rule for target.
+qbrobotics_driver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qbrobotics_driver
+.PHONY : qbrobotics_driver
+
+# fast build rule for target.
+qbrobotics_driver/fast:
+	$(MAKE) $(MAKESILENT) -f libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build.make libs/qbdevice-api-7.x.x/qbrobotics-driver/CMakeFiles/qbrobotics_driver.dir/build
+.PHONY : qbrobotics_driver/fast
 
 src/hand_controller.o: src/hand_controller.cpp.o
 .PHONY : src/hand_controller.o
 
 # target to build an object file
 src/hand_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/src/hand_controller.cpp.o
 .PHONY : src/hand_controller.cpp.o
 
 src/hand_controller.i: src/hand_controller.cpp.i
@@ -187,7 +213,7 @@ src/hand_controller.i: src/hand_controller.cpp.i
 
 # target to preprocess a source file
 src/hand_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/src/hand_controller.cpp.i
 .PHONY : src/hand_controller.cpp.i
 
 src/hand_controller.s: src/hand_controller.cpp.s
@@ -195,7 +221,7 @@ src/hand_controller.s: src/hand_controller.cpp.s
 
 # target to generate assembly for a file
 src/hand_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/qbSHR_API_example.dir/build.make CMakeFiles/qbSHR_API_example.dir/src/hand_controller.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qb.dir/build.make CMakeFiles/qb.dir/src/hand_controller.cpp.s
 .PHONY : src/hand_controller.cpp.s
 
 # Help Target
@@ -210,7 +236,9 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... qbSHR_API_example"
+	@echo "... Serial"
+	@echo "... qb"
+	@echo "... qbrobotics_driver"
 	@echo "... src/hand_controller.o"
 	@echo "... src/hand_controller.i"
 	@echo "... src/hand_controller.s"

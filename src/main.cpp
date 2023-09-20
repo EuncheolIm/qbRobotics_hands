@@ -67,6 +67,7 @@ int scanForDevices(const int &max_repeats) {
   int qbrobotics_devices_found = 0;
   for(auto &serial_port:serial_ports_){ // scan and open all the serial port
     int failures = 0;
+    std::cout << serial_port.serial_port<<std::endl; 
     while (failures <= max_repeats) {
       if (open(serial_port.serial_port) != 0) {
         failures++;
@@ -84,7 +85,7 @@ int scanForDevices(const int &max_repeats) {
           std::cout << "Not valid device retrieved!" << std::endl;
           continue;  // ID 120 is reserved, ID 0 is for sure an error
         }
-        soft_hands_.insert(std::make_pair(static_cast<int>(device_id.id), std::make_shared<qbrobotics_research_api::qbSoftHandLegacyResearch>(communication_handler_, "dev", serial_port.serial_port, device_id.id)));
+        soft_hands_.insert(std::make_pair(1, std::make_shared<qbrobotics_research_api::qbSoftHandLegacyResearch>(communication_handler_, "dev", serial_port.serial_port, 1)));
         qbrobotics_devices_found++;
       }
       if (qbrobotics_devices_found == 0) {
